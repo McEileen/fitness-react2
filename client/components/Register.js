@@ -14,7 +14,7 @@ export default class Register extends React.Component {
     e.preventDefault();
     const username = this.refs.username.value;
     const password = this.refs.password.value;
-    axios.post('http://localhost:9001/api/users', { username, password })
+    axios.post('http://localhost:9002/api/users', { username, password })
     .then(() => {
       browserHistory.push('/login');
     })

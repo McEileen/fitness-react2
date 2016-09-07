@@ -18,7 +18,7 @@ export default class Register extends React.Component {
   }
 
   refresh() {
-    axios.get('http://localhost:9001/api/profiles', { headers: { authorization: this.state.authorization } })
+    axios.get('http://localhost:9002/api/profiles', { headers: { authorization: this.state.authorization } })
     .then(res => {
       this.setState({ profile: res.data });
     });
@@ -31,7 +31,7 @@ export default class Register extends React.Component {
     const height = this.refs.height.value;
     const weight = this.refs.weight.value;
     const photo = this.refs.photo.value;
-    axios.post('http://localhost:9001/api/profiles', { gender, age, height, weight, photo }, { headers: { authorization: this.state.authorization } })
+    axios.post('http://localhost:9002/api/profiles', { gender, age, height, weight, photo }, { headers: { authorization: this.state.authorization } })
     .then(() => {
       this.refresh();
     });

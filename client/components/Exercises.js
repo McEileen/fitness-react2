@@ -18,7 +18,7 @@ export default class Exercises extends React.Component {
   }
 
   refresh() {
-    axios.get('http://localhost:9001/api/exercises', { headers: { authorization: this.state.authorization } })
+    axios.get('http://localhost:9002/api/exercises', { headers: { authorization: this.state.authorization } })
     .then(res => {
       this.setState({ exercises: res.data });
     });
@@ -30,7 +30,7 @@ export default class Exercises extends React.Component {
     const quantity = this.refs.quantity.value;
     const calories = this.refs.calories.value;
     const duration = this.refs.duration.value;
-    axios.post('http://localhost:9001/api/exercises', { type, quantity, calories, duration }, { headers: { authorization: this.state.authorization } })
+    axios.post('http://localhost:9002/api/exercises', { type, quantity, calories, duration }, { headers: { authorization: this.state.authorization } })
     .then(() => {
       this.refresh();
     });

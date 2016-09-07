@@ -15,7 +15,7 @@ export default class Login extends React.Component {
     e.preventDefault();
     const username = this.refs.username.value;
     const password = this.refs.password.value;
-    axios.post('http://localhost:9001/api/authenticate', { username, password })
+    axios.post('http://localhost:9002/api/authenticate', { username, password })
     .then((res) => {
       localStorage.clear();
       localStorage.setItem('token', res.headers.authorization);
